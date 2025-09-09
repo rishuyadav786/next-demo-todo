@@ -2,7 +2,7 @@
 import React,{useEffect} from 'react';
 export default function Dashboard() {
 const [data, setData] = React.useState([{id:"", text:""}]);
-const api=process.env.BASE_API;
+const api=process.env.NEXT_PUBLIC_BASE_API;
     useEffect(() => {
         // Fetch data or perform any side effects here
         console.log("Dashboard component rendered");
@@ -38,3 +38,4 @@ const api=process.env.BASE_API;
   );
 
 }
+
