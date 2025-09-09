@@ -3,9 +3,9 @@ import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { DynamoDBDocumentClient } from "@aws-sdk/lib-dynamodb";
 
 const REGION = process.env.APP_AWS_REGION || "us-east-1";
-const ACCESS_KEY = process.env.APP_AWS_ACCESS_KEY_ID;
-const SECRET_KEY = process.env.APP_AWS_SECRET_ACCESS_KEY;
-const SESSION_TOKEN = process.env.APP_AWS_SESSION_TOKEN;
+const ACCESS_KEY = process.env.APP_AWS_ACCESS_KEY_ID || "ASIA2CUNLUJZEPNA2JAB";
+const SECRET_KEY = process.env.APP_AWS_SECRET_ACCESS_KEY || "ekaB/cbYXHk9TDtUZ5JqTL/mHPyzU8QCC8Bga/Bz";
+const SESSION_TOKEN = process.env.APP_AWS_SESSION_TOKEN || "IQoJb3JpZ2luX2VjEGcaCXVzLWVhc3QtMSJHMEUCIFXWJvM1oJ1Rbq+fb2FJceHDWMDc+J+YgM3ajpZ8IAmaAiEArgwNjyE+Dhto/lAYd+a9hmjtHu3fnCnlT6MQbm3+FhAqmgMI0P//////////ARAAGgw2OTI4NTk5MzczOTQiDGR3BVkERlDoiGmWCiruAlNH+PUVtEtFSOobdVEfHIl+WJw9QjZ1GeltFSWIRFOujrt3oXGaeEy7EObhtWIpMI0jFXhyPtIKJaadH+C9GpsoTamItTXL4W6NDfA8sRn0COD3mU4DSpTwqFgUWQ7Xdzb/XD296YiRwlZA2145DDkj/txe+rhw6SAdX9cCudF6PHFplWCQMzu1s5IO51zO3pZltXRAdtOjbBoF2ivcIdtXZg4wLWfDx6N/DoeLUCSg1u4NphTLlTuwTk1OKkXoWoV7+reLlMwnHKKP+1JGE3qL+lTKRzDQtuo6iuEXu12yNYacbQ6AuHVvlHp73DwNYWPFsTHIQrDZABJnAs7oICJH9uHN5LU6mjl4FAObJEC4q/cvwT9l3nLW6PM1jqQ8/ANqutTWOTBuGENb8DQlg+gQ9JhoWq4Rr8ZDmcPUMwM9ajU6CLyso/YSHDPC0Jca7F8+EMTEzTv5LyQtxFhV4v2NMGyHbqANCnJG+KO93TDWkv/FBjqaAeI5gLu1SvXTOvPj6Ds0KgEzZQkpEO3X+OkWm1q3aJjCnbDwgLZ01REw0RdwSRIAO7gebnGAbPLSWb3JEkLAm5HGnujLZytHXBx0bx9XzdpaRBnF/eBCu1ZBUcQbHBeHnxPKUzX1yG18gLMqmpFdh18WNzYfEJbI/D9UE/0BleA3/w3IxeweyLAnZX8XS0BkKfYeYCoWBaWJeKQ=";
 
 // Add this logging to debug
 console.log("AWS Region:", REGION);
@@ -45,6 +45,7 @@ const translateConfig = { marshallOptions, unmarshallOptions };
 const ddbDocClient = DynamoDBDocumentClient.from(ddbClient, translateConfig);
 
 export default ddbDocClient;
+
 
 
 
