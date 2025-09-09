@@ -14,7 +14,7 @@ const [data, setData] = React.useState([{id:"", email:"", task:""}]);
         priority: 'low', // Default priority
         completed: false
     });
-const API="http://localhost:3000/serverapi"
+const API=process.env.BASE_API;
     useEffect(() => {
         // This code runs only on the client, after the component has mounted.
         const storedEmail = localStorage.getItem('todoEmail');
@@ -24,7 +24,7 @@ const API="http://localhost:3000/serverapi"
 
         // Fetch data or perform any side effects here
         console.log("Dashboard component rendered");
-        fetch(API)
+        fetch(API+"serverapi")
           .then(response => response.json())
           .then(data => { 
             console.log("Fetched data:", data);
@@ -124,4 +124,5 @@ const API="http://localhost:3000/serverapi"
 
     </main>
   );
+
 }
