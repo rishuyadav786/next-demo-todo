@@ -14,7 +14,7 @@ const [data, setData] = React.useState([{id:"", email:"", task:""}]);
         priority: 'low', // Default priority
         completed: false
     });
-const API=process.env.BASE_API;
+const API=process.env.NEXT_PUBLIC_BASE_API;
     useEffect(() => {
         // This code runs only on the client, after the component has mounted.
         const storedEmail = localStorage.getItem('todoEmail');
@@ -126,3 +126,4 @@ const API=process.env.BASE_API;
   );
 
 }
+
