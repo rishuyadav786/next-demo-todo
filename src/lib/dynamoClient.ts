@@ -2,10 +2,10 @@
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { DynamoDBDocumentClient } from "@aws-sdk/lib-dynamodb";
 
-const REGION = process.env.AWS_REGION || "us-east-1";
-const ACCESS_KEY = process.env.AWS_ACCESS_KEY_ID;
-const SECRET_KEY = process.env.AWS_SECRET_ACCESS_KEY;
-const SESSION_TOKEN = process.env.AWS_SESSION_TOKEN;
+const REGION = process.env.REGION || "us-east-1";
+const ACCESS_KEY = process.env.ACCESS_KEY_ID;
+const SECRET_KEY = process.env.SECRET_ACCESS_KEY;
+const SESSION_TOKEN = process.env.SESSION_TOKEN;
 
 // Add this logging to debug
 console.log("AWS Region:", REGION);
@@ -46,3 +46,4 @@ const translateConfig = { marshallOptions, unmarshallOptions };
 const ddbDocClient = DynamoDBDocumentClient.from(ddbClient, translateConfig);
 
 export default ddbDocClient;
+
