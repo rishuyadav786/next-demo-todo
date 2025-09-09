@@ -17,7 +17,6 @@ if (!ACCESS_KEY || !SECRET_KEY) {
     "AWS credentials (AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY) are not set in environment variables."
   );
 }
-
 const ddbClient = new DynamoDBClient({
   region: REGION,
   credentials: {
@@ -46,5 +45,6 @@ const translateConfig = { marshallOptions, unmarshallOptions };
 const ddbDocClient = DynamoDBDocumentClient.from(ddbClient, translateConfig);
 
 export default ddbDocClient;
+
 
 
