@@ -2,10 +2,10 @@
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { DynamoDBDocumentClient } from "@aws-sdk/lib-dynamodb";
 
-const REGION = process.env.DDB_AWS_REGION;
-const ACCESS_KEY = process.env.DDB_AWS_ACCESS_KEY_ID;
-const SECRET_KEY = process.env.DDB_AWS_SECRET_ACCESS_KEY;
-const SESSION_TOKEN = process.env.DDB_AWS_SESSION_TOKEN;
+const REGION = process.env.NEXT_PUBLIC_DDB_REGION;
+const ACCESS_KEY = process.env.NEXT_PUBLIC_DDB_ACCESS_KEY_ID;
+const SECRET_KEY = process.env.NEXT_PUBLIC_DDB_SECRET_ACCESS_KEY;
+const SESSION_TOKEN = process.env.NEXT_PUBLIC_DDB_SESSION_TOKEN;
 // Add this logging to debug
 console.log("AWS Region:", REGION);
 console.log("AWS Access Key ID:", ACCESS_KEY ? `${ACCESS_KEY.substring(0, 4)}...` : "Not Found");
@@ -44,6 +44,7 @@ const translateConfig = { marshallOptions, unmarshallOptions };
 const ddbDocClient = DynamoDBDocumentClient.from(ddbClient, translateConfig);
 
 export default ddbDocClient;
+
 
 
 
