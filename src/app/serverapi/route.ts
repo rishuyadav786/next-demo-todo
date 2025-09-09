@@ -8,10 +8,10 @@ import crypto from "crypto";
 export async function GET() {
     // --- START DEBUG LOGGING ---
     console.log("--- Verifying Environment Variables in API Route ---");
-    console.log("AWS_REGION:", process.env.AWS_REGION);
-    console.log("AWS_ACCESS_KEY_ID:", process.env.AWS_ACCESS_KEY_ID ? "Loaded" : "NOT LOADED");
-    console.log("AWS_SECRET_ACCESS_KEY:", process.env.AWS_SECRET_ACCESS_KEY ? "Loaded" : "NOT LOADED");
-    console.log("AWS_SESSION_TOKEN:", process.env.AWS_SESSION_TOKEN ? "Loaded" : "NOT LOADED");
+    console.log("AWS_REGION:", process.env.REGION);
+    console.log("AWS_ACCESS_KEY_ID:", process.env.ACCESS_KEY_ID ? "Loaded" : "NOT LOADED");
+    console.log("AWS_SECRET_ACCESS_KEY:", process.env.SECRET_ACCESS_KEY ? "Loaded" : "NOT LOADED");
+    console.log("AWS_SESSION_TOKEN:", process.env.SESSION_TOKEN ? "Loaded" : "NOT LOADED");
     console.log("----------------------------------------------------");
     // --- END DEBUG LOGGING ---
 
@@ -59,3 +59,4 @@ export async function POST(req: Request) {
         return NextResponse.json({ error: message }, { status: 500 });
     }
 }
+
