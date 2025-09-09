@@ -2,11 +2,11 @@
 import React,{useEffect} from 'react';
 export default function Dashboard() {
 const [data, setData] = React.useState([{id:"", text:""}]);
-const api="http://localhost:3000/api"
+const api=process.env.BASE_API;
     useEffect(() => {
         // Fetch data or perform any side effects here
         console.log("Dashboard component rendered");
-        fetch(api)
+        fetch(api+"api")
           .then(response => response.json())
           .then(data => setData(data))
           .catch(error => console.error('Error fetching data:', error));
@@ -36,4 +36,5 @@ const api="http://localhost:3000/api"
 
     </main>
   );
+
 }
